@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Botswana Networks | Find Your Best Mobile Network</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <h1 class="main-title">Find Your Perfect Mobile Network</h1>
+        <p class="subtitle">Compare Orange, Mascom & BTC • Real reviews from 788+ Batswana • Updated 2025</p>
+        
+        <!-- Quiz Section -->
+        <h2 class="section-title">🎯 Quick Match: Answer 3 Questions</h2>
+        
+        <div class="quiz-container">
+            <div class="quiz-column">
+                <h3>What matters most?</h3>
+                <div class="radio-group" id="priority-group">
+                    <label class="radio-label">
+                        <input type="radio" name="priority" value="Best Price">
+                        <span>💰 Best Price</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="priority" value="Fastest Internet">
+                        <span>⚡ Fastest Internet</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="priority" value="Best Service">
+                        <span>📞 Best Service</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="priority" value="Overall Quality">
+                        <span>📱 Overall Quality</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="quiz-column">
+                <h3>How do you use data?</h3>
+                <div class="radio-group" id="usage-group">
+                    <label class="radio-label">
+                        <input type="radio" name="usage" value="Light (Social media)">
+                        <span>Light (Social media)</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="usage" value="Medium (Videos)">
+                        <span>Medium (Videos)</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="usage" value="Heavy (Gaming/Streaming)">
+                        <span>Heavy (Gaming/Streaming)</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="usage" value="Business/Work">
+                        <span>Business/Work</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="quiz-column">
+                <h3>Where do you live?</h3>
+                <div class="radio-group" id="location-group">
+                    <label class="radio-label">
+                        <input type="radio" name="location" value="Gaborone">
+                        <span>Gaborone</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="location" value="Francistown">
+                        <span>Francistown</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="location" value="Other City">
+                        <span>Other City</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="location" value="Village/Rural">
+                        <span>Village/Rural</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <button class="primary-button" onclick="findMatch()">🔍 Find My Best Match</button>
+        
+        <!-- Recommendation Result (Hidden Initially) -->
+        <div id="recommendation-result" style="display: none;">
+            <hr class="divider">
+            
+            <div class="success-box">
+                <h3 id="recommendation-title"></h3>
+            </div>
+            
+            <div class="info-box">
+                <strong>Why?</strong> <span id="recommendation-reason"></span>
+            </div>
+            
+            <!-- Metrics -->
+            <div class="metrics-container" id="metrics-container"></div>
+            
+            <!-- Email Capture -->
+            <h3 style="margin-top: 2rem;">📧 Get Your Personalized Report</h3>
+            <p>Enter your email to receive detailed comparison and exclusive offers:</p>
+            
+            <div class="email-container">
+                <input type="email" id="user-email" placeholder="your@email.com" class="email-input">
+                <input type="text" id="user-name" placeholder="Your name (optional)" class="email-input">
+            </div>
+            
+            <!-- CTA Button -->
+            <h3 style="margin-top: 2rem;">Ready to switch?</h3>
+            <button class="cta-button" id="cta-button" onclick="handleCTA()"></button>
+        </div>
+        
+        <!-- Full Comparison Section -->
+        <hr class="divider">
+        <h2 class="section-title">📊 Complete Network Comparison</h2>
+        
+        <div id="comparison-table"></div>
+        
+        <!-- Detailed Network Cards -->
+        <h3 style="margin-top: 2rem; margin-bottom: 1.5rem;">Detailed Breakdown</h3>
+        <div class="network-cards-container" id="network-cards"></div>
+        
+        <!-- Social Proof -->
+        <hr class="divider">
+        <div class="trust-badge">
+            ✓ 788+ Verified Reviews | ✓ Updated February 2025 | ✓ Independent Comparison
+        </div>
+        
+        <!-- Customer Reviews -->
+        <details class="expandable">
+            <summary>📝 Recent Customer Reviews</summary>
+            <div class="expandable-content">
+                <p><strong>Orange User (Gaborone):</strong> <em>"Fast internet but expensive. Good for work."</em> - 7/10</p>
+                <p><strong>Mascom User (Francistown):</strong> <em>"Reliable network, fair prices. Been using for 5 years."</em> - 8/10</p>
+                <p><strong>BTC User (Maun):</strong> <em>"Best customer service I've experienced. Worth it."</em> - 9/10</p>
+            </div>
+        </details>
+        
+        <!-- FAQ -->
+        <details class="expandable">
+            <summary>❓ Frequently Asked Questions</summary>
+            <div class="expandable-content">
+                <p><strong>Q: How often is this data updated?</strong><br>
+                A: We collect new reviews monthly and update our recommendations based on the latest data.</p>
+                
+                <p><strong>Q: Is this comparison independent?</strong><br>
+                A: Yes! Our data comes from real customer surveys, not network marketing.</p>
+                
+                <p><strong>Q: Can I switch networks easily?</strong><br>
+                A: Yes, all networks support number portability. You keep your number when you switch.</p>
+                
+                <p><strong>Q: Which network is best for students?</strong><br>
+                A: Based on our data, Mascom is most popular among students (335 student reviews).</p>
+            </div>
+        </details>
+        
+        <!-- Newsletter Signup -->
+        <hr class="divider">
+        <h3>💌 Get Monthly Network Updates</h3>
+        <div class="newsletter-container">
+            <input type="email" id="newsletter-email" placeholder="your@email.com" class="newsletter-input">
+            <button class="newsletter-button" onclick="handleNewsletter()">Subscribe</button>
+        </div>
+        <div id="newsletter-message"></div>
+    </div>
+    
+    <script src="networks_data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
