@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compare Botswana Networks | Find Your Best Mobile Network</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        /* Fallback critical CSS in case styles.css doesn't load */
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 20px; background: #fff; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .main-title { font-size: 2rem; text-align: center; color: #667eea; }
+    </style>
 </head>
 <body>
     <!-- Main Container -->
@@ -170,7 +176,26 @@
         <div id="newsletter-message"></div>
     </div>
     
-    <script src="networks_data.js"></script>
-    <script src="script.js"></script>
+    <script src="./networks_data.js"></script>
+    <script src="./script.js"></script>
+    
+    <script>
+        // Check if styles loaded properly, if not log to console
+        document.addEventListener('DOMContentLoaded', function() {
+            var stylesLoaded = false;
+            var sheets = document.styleSheets;
+            for(var i = 0; i < sheets.length; i++) {
+                try {
+                    if(sheets[i].href && sheets[i].href.indexOf('styles.css') > -1) {
+                        stylesLoaded = true;
+                        break;
+                    }
+                } catch(e) {}
+            }
+            if(!stylesLoaded) {
+                console.warn('styles.css might not have loaded correctly. Check network tab.');
+            }
+        });
+    </script>
 </body>
 </html>
